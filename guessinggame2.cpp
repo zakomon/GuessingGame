@@ -4,28 +4,38 @@ using namespace std;
 
 int main(){
 	for(int i = 0; i <= 100; i++){
- 		int guess = (rand() % 1025);
+ 		int guess = (rand() % 1024) + 1;
 		int uguess;
 	 	int count = 0;
 		int low = 1;
+		int sep = 0;
 		int high = 1024;
-
-		int cguess = (low + high) / 2;
+		int cguess = 512;
 		while(cguess != guess){
 
 			if(cguess > guess){
-				 high = cguess;
+				high = cguess;
+				string r = "range ";
+				string h = "-";
 			}
 			else if(cguess < guess){
-				 low = cguess;
+				low = cguess;
 			}
 			else{
 				break;
 			}
-			cguess = (high + low) / 2;
+			string g = "Guesses Count ";
+			string r = "range ";
+			string h = "-";
+			cout << r << low << h << high << endl; 
+
 			count++;
+			cout << cguess << endl;
+			cout << g << count << endl;
+			cguess = (high + low) / 2;
+			sep = count;
 	 	}
-	 	cout << guess << endl;
-		cout << count << endl;
+	 	string r = "Final Guess Count ";
+	 	cout << r << sep << endl;
 	}
 }

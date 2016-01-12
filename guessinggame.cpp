@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
 	srand(time(NULL));
-	int guess = (rand() % 1025);
+	int guess = (rand() % 1024) + 1;
 	int uguess;
 	cin >> uguess;
 	int count = 0;
