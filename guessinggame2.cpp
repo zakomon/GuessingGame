@@ -24,7 +24,6 @@ int binary_search(int guess,int high,int low,int count){
 
 int main(){
 	for(int i = 0; i <= 100; i++){
-		srand(time(NULL));
 
 	 	int gues = (rand() % 1024) + 1;
 	 	int x = binary_search(gues,1024,1,0);
