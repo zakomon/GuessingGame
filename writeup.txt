@@ -1,0 +1,19 @@
+This algorithm takes the guess as the midpoint of the lower and upper bound of the range in this case 1 and 1024 ,hence the midpoint would be 512 if the current guess is lower than the correct guess the lower bound changes to the current guess.If the current guess is higher than the correct guess the upper bound changes to the current guess
+
+If N is the number of possible values in this case 1024 then at most it will take   question will be since 2^10 = 1024 therefore it will take  (10+1) questions or 11 questions at most for this program to guess the number as each question halves the search space.
+
+For eg. If the number for the program to guess is 517
+
+The following sequence of guesses would be used by the program.
+
+512 -> Lower   Search Space(512-1024)
+768 -> Higher  Search Space(512-768)
+640 -> Higher  Search Space(512-640)
+576 -> Higher  Search Space(512-576)
+544 -> Higher  Search Space(512-544)
+520 -> Higher  Search Space(512-520)
+516 -> Lower   Search Space(512-516)
+518 -> Higher  Search Space(516-518)
+517 -> Correct
+
+Therefore the number of guesses taken will be 9.
