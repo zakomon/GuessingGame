@@ -2,40 +2,33 @@
 
 using namespace std;
 
-int main(){
+
+
+int binary_search(int guess,int high,int low,int count){
+	int cguess = (high + low) / 2;
+	count++;
 	for(int i = 0; i <= 100; i++){
- 		int guess = (rand() % 1024) + 1;
-		int uguess;
-	 	int count = 0;
-		int low = 1;
-		int sep = 0;
-		int high = 1024;
-		int cguess = 512;
-		while(cguess != guess){
+		if(cguess != guess){
 
 			if(cguess > guess){
-				high = cguess;
-				string r = "range ";
-				string h = "-";
+				return binary_search(guess,cguess,low,count);
 			}
 			else if(cguess < guess){
-				low = cguess;
+				return binary_search(guess,high,cguess,count);
 			}
-			else{
-				break;
-			}
-			string g = "Guesses Count ";
-			string r = "range ";
-			string h = "-";
-			cout << r << low << h << high << endl; 
+			
 
-			count++;
-			cout << cguess << endl;
-			cout << g << count << endl;
-			cguess = (high + low) / 2;
-			sep = count;
-	 	}
-	 	string r = "Final Guess Count ";
-	 	cout << r << sep << endl;
+		}
+		return count;
 	}
+}
+
+
+int main(){
+	srand(time(NULL));
+
+ 	int gues = (rand() % 1024) + 1;
+ 	int x = binary_search(gues,1024,1,0);
+ 	cout << gues << endl;
+	cout << x << endl;
 }
